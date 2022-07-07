@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { candidatCtx } from './../store/CandidatContext';
-import { useRef } from 'react';
-import { useState } from 'react';
 
 export default function Update() {
   let {id}=useParams()

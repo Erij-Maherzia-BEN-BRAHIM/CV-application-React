@@ -3,13 +3,9 @@ import '../assets/rotating-card.css'
 import cover from '../assets/rotating_card_thumb2.png'
 import { Link } from 'react-router-dom';
 export default function Details(props) {
-  let avatar= props.candSelected.avatar
-  let firstname =props.candSelected.firstname
-  let lastname= props.candSelected.lastname
-  let age= props.candSelected.age
-  let profession= props.candSelected.profession
- 
+ if(props.isSelected)
   return (
+
     <div>
         <div className="card-container">
     <div className="card">
@@ -19,14 +15,14 @@ export default function Details(props) {
                 <img src={cover}alt='cover' />
             </div>
             <div className="user">
-                <img className="img-circle" src={avatar} alt="avatar"/>
+                <img className="img-circle" src={props.selectedCandidat.avatar} alt="avatar"/>
             </div>
             <div className="content">
                 <div className="main">
-                    <h3 className="name">{firstname} {lastname} </h3>
-                    <p className="profession">{age} ans</p>
+                    <h3 className="name">{props.selectedCandidat.firstname} {props.selectedCandidat.lastname} </h3>
+                    <p className="profession">{props.selectedCandidat.age} ans</p>
 
-                    <p className="text-center"> {profession} </p>
+                    <p className="text-center"> {props.selectedCandidat.profession} </p>
                 </div>
                 <div className="footer">
                     <div className="rating">
@@ -70,7 +66,7 @@ export default function Details(props) {
             <div className="footer">
                 <div className="social-links text-center">
                     <button  className="btn btn-success m-2">Recruter</button>
-                    <Link className="btn btn-info m-2" to={"/cv/"+props.candSelected.id}>+ Details</Link> 
+                    <Link className="btn btn-info m-2" to={"/cv/"+props.selectedCandidat.id}>+ Details</Link>  
                 </div>
             </div>
         </div>
@@ -79,4 +75,7 @@ export default function Details(props) {
     </div>
     
   )
+  else {
+    return <div>Please select one candidat</div>
+  }
 }

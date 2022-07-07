@@ -1,21 +1,24 @@
-import React from 'react'
-import { useContext } from 'react';
-import { candidatCtx } from './../store/CandidatContext';
 import Item from './Item';
 
-export default function Liste() {
-    const candCTX= useContext(candidatCtx)
-    let ListeCandidats= candCTX.tabCandidats;
-    console.log(ListeCandidats);
+export default function Liste(props) {
+//const candCTX= useContext(candidatCtx)
+   //let ListeCandidats= candCTX.tabCandidats;
   return (
     <div>
-        <ol className='list-group'>
+      {/*   <ol className='list-group'>
 {
     ListeCandidats.map((c)=>{
         return <Item key={c.id} oneCandidat={c}></Item>
     })
 }
 
+        </ol> */}
+        <ol>
+          {
+            props.Liste.map((c)=>{
+              return <Item showDetails={props.showDetails} candidat={c} key={c.id} ></Item>
+            })
+          }
         </ol>
     </div>
   )
