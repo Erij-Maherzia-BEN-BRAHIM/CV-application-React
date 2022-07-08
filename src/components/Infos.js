@@ -1,18 +1,17 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { candidatCtx } from './../store/CandidatContext';
-import { Link, useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 export default function Infos() {
 let ctx=useContext(candidatCtx)
-let {id}=useParams()
-let selectedCand= ctx.getCandidatById(id)
+let {_id}=useParams()
+let selectedCand= ctx.getCandidatById(_id)
 let navigate=useNavigate()
 function removeC(){
-    ctx.removeOneCandidat(id)
+    ctx.removeOneCandidat(_id)
     navigate('/')
 }
-
+console.log("received ", selectedCand)
 return (
     <>
 
@@ -31,12 +30,12 @@ return (
                             <tbody>
                                 <tr>
                                     <td>
-                                        <strong>Prénom</strong> {selectedCand.firstname}
+                                        <strong>Prénom</strong> {selectedCand.prenom}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
-                                        <strong>Nom</strong> {selectedCand.lastname}
+                                        <strong>Nom</strong> {selectedCand.nom}
                                     </td>
                                 </tr>
                                 <tr>
@@ -54,7 +53,7 @@ return (
                         </table>
                         <div className="d-flex justify-content-center">
                             <button  className="btn btn-danger" onClick={removeC}>   Delete    </button>
-                          <Link className=" btn btn-primary" to={"/cv/"+id+"/edit"} >Update </Link>
+                          <Link className=" btn btn-primary" to={"/cv/"+_id+"/edit"} >Update </Link>
                         </div>
                     </div>
                 </div>

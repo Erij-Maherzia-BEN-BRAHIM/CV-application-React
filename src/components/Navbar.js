@@ -12,7 +12,8 @@ export default function Navbar() {
           <li><Link to="/" className="nav-link px-2 link-dark">CV</Link></li>
           <li><Link to="/addNew" className="nav-link px-2 link-dark">Add CV</Link></li>
           <li><Link to="/login" className="nav-link px-2 link-dark">Login</Link></li>
-          <li><Link to="/logout" className="nav-link px-2 link-dark">Logout</Link></li>
+          <li><Link to="/register" className="nav-link px-2 link-dark">Register</Link></li>
+          <li><Link to="#" className="nav-link px-2 link-dark">Logout</Link></li>
         </ul>
 
       </div>

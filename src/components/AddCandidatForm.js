@@ -1,6 +1,6 @@
 import React, { useContext, useId, useRef } from "react";
-import { candidatCtx } from './../store/CandidatContext';
 import { useNavigate } from 'react-router-dom';
+import { candidatCtx } from './../store/CandidatContext';
 
 export default function AddCandidatForm() {
  const idGenerate=useId()
@@ -15,8 +15,8 @@ export default function AddCandidatForm() {
   e.preventDefault()
   let NewCandidat={
     id: idGenerate,
-    firstname: refFname.current.value,
-    lastname: refLname.current.value,
+    prenom: refFname.current.value,
+    nom: refLname.current.value,
     age: refAge.current.value,
     profession: refProfession.current.value,
     avatar: refAvatar.current.value,
@@ -28,10 +28,10 @@ export default function AddCandidatForm() {
     <div>
       <form onSubmit={submitHandler}>
         <div className="container">
-          <label htmlFor="firstname">Prénom</label>
-          <input className="form-control" type="text" ref={refFname} name="firstname"></input>
-          <label htmlFor="lastname">Nom</label>
-          <input className="form-control" type="text" ref={refLname} name="lastname"></input>
+          <label htmlFor="prenom">Prénom</label>
+          <input className="form-control" type="text" ref={refFname} name="prenom"></input>
+          <label htmlFor="nom">Nom</label>
+          <input className="form-control" type="text" ref={refLname} name="nom"></input>
           <label htmlFor="age">Age</label>
           <input className="form-control" type="number" ref={refAge} name="age"></input>
           <label htmlFor="profession">Profession</label>

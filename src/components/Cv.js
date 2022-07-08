@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { candidatCtx } from './../store/CandidatContext';
 import Details from "./Details";
 import Liste from "./Liste";
-import { candidatCtx } from './../store/CandidatContext';
 
 export default function Cv() {
 const candCTX=useContext(candidatCtx)
@@ -13,9 +13,18 @@ function showDetails(c){
   setSelectedCandidat(c)
 
 }
+ useEffect(()=>{
+  candCTX.getAllCandidats()
+  console.log("usefecct declenche ", candCTX.tabCandidats);
+}
+, [])
+console.log('tc = ',candCTX.tabCandidats);
 if (candCTX.tabCandidats.length===0){
+
   return <div className="container"><h1> Your list of candidats is empty</h1></div>
 }else{
+  console.log("usefecct declenche ", candCTX.tabCandidats);
+
   return (
     <div className="container">
      <div className="row">

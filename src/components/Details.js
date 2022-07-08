@@ -1,7 +1,7 @@
-import React from 'react'
-import '../assets/rotating-card.css'
-import cover from '../assets/rotating_card_thumb2.png'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/rotating-card.css';
+import cover from '../assets/rotating_card_thumb2.png';
 export default function Details(props) {
  if(props.isSelected)
   return (
@@ -19,7 +19,7 @@ export default function Details(props) {
             </div>
             <div className="content">
                 <div className="main">
-                    <h3 className="name">{props.selectedCandidat.firstname} {props.selectedCandidat.lastname} </h3>
+                    <h3 className="name">{props.selectedCandidat.prenom} {props.selectedCandidat.nom} </h3>
                     <p className="profession">{props.selectedCandidat.age} ans</p>
 
                     <p className="text-center"> {props.selectedCandidat.profession} </p>
@@ -66,7 +66,7 @@ export default function Details(props) {
             <div className="footer">
                 <div className="social-links text-center">
                     <button  className="btn btn-success m-2">Recruter</button>
-                    <Link className="btn btn-info m-2" to={"/cv/"+props.selectedCandidat.id}>+ Details</Link>  
+                    <Link className="btn btn-info m-2" to={"/cv/"+props.selectedCandidat._id}>+ Details</Link>  
                 </div>
             </div>
         </div>
