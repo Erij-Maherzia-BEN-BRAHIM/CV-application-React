@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/rotating-card.css';
@@ -12,6 +13,13 @@ export default function Details(props) {
             rCtx.removeFromEmbauches(props.selectedCandidat._id)
         }
     }
+=======
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../assets/rotating-card.css';
+import cover from '../assets/rotating_card_thumb2.png';
+export default function Details(props) {
+>>>>>>> main
  if(props.isSelected)
   return (
 
@@ -74,7 +82,11 @@ export default function Details(props) {
             </div>
             <div className="footer">
                 <div className="social-links text-center">
+<<<<<<< HEAD
                     <button  className="btn btn-success m-2" onClick={recrutmentHandler}>{rCtx.isEmbauche(props.selectedCandidat._id)?'Retirer de la liste des recrutés ':'Recruter'} </button>
+=======
+                    <button  className="btn btn-success m-2">Recruter</button>
+>>>>>>> main
                     <Link className="btn btn-info m-2" to={"/cv/"+props.selectedCandidat._id}>+ Details</Link>  
                 </div>
             </div>
@@ -85,6 +97,10 @@ export default function Details(props) {
     
   )
   else {
+<<<<<<< HEAD
     return <div>Please select the candidat that you want to see its details</div>
+=======
+    return <div>Please select one candidat</div>
+>>>>>>> main
   }
 }

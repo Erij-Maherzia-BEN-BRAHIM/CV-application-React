@@ -9,6 +9,10 @@ body {
 .btn:active{
     outline: 0 !important;
 }
+<<<<<<< HEAD
+=======
+/* entire container, keeps perspective */
+>>>>>>> main
 .card-container {
 	  -webkit-perspective: 800px;
    -moz-perspective: 800px;
@@ -16,6 +20,10 @@ body {
         perspective: 800px;
         margin-bottom: 30px;
 }
+<<<<<<< HEAD
+=======
+/* flip the pane when hovered */
+>>>>>>> main
 .card-container:not(.manual-flip):hover .card,
 .card-container.hover.manual-flip .card{
 	-webkit-transform: rotateY( 180deg );
@@ -32,6 +40,10 @@ body {
  -o-transform: none;
     transform: none;
 }
+<<<<<<< HEAD
+=======
+/* flip speed goes here */
+>>>>>>> main
 .card {
 	 -webkit-transition: -webkit-transform .5s;
    -moz-transition: -moz-transform .5s;
@@ -44,6 +56,10 @@ body {
 	position: relative;
 }
 
+<<<<<<< HEAD
+=======
+/* hide back of pane during swap */
+>>>>>>> main
 .front, .back {
 	-webkit-backface-visibility: hidden;
    -moz-backface-visibility: hidden;
@@ -56,10 +72,18 @@ body {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 }
 
+<<<<<<< HEAD
+=======
+/* front pane, placed above back */
+>>>>>>> main
 .front {
 	z-index: 2;
 }
 
+<<<<<<< HEAD
+=======
+/* back, initially hidden pane */
+>>>>>>> main
 .back {
 		-webkit-transform: rotateY( 180deg );
    -moz-transform: rotateY( 180deg );
@@ -73,6 +97,10 @@ body {
     left: 0;
     bottom: 4px;
 }
+<<<<<<< HEAD
+=======
+/*        Style       */
+>>>>>>> main
 
 
 .card{
@@ -188,6 +216,10 @@ body {
 .card .stats p{
 	color: #777777;
 }
+<<<<<<< HEAD
+=======
+/*      Just for presentation        */
+>>>>>>> main
 
 .title{
     color: #506A85;
@@ -288,6 +320,10 @@ body {
 }
 
 
+<<<<<<< HEAD
+=======
+/*       Fix bug for IE      */
+>>>>>>> main
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .front, .back{
@@ -297,7 +333,11 @@ body {
 
     .back {
         visibility: hidden;
+<<<<<<< HEAD
         transition: all 0.2s cubic-bezier(.92,.01,.83,.67);
+=======
+        -ms-transition: all 0.2s cubic-bezier(.92,.01,.83,.67);
+>>>>>>> main
     }
     .front{
         z-index: 4;

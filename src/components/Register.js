@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext, useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
 import { userCtx } from './../store/UserContext';
@@ -5,6 +6,13 @@ import { userCtx } from './../store/UserContext';
 export default function Register() {
     const navigate = useNavigate();
     //let uCtx=useContext(userCtx)
+=======
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
+export default function Register() {
+    const navigate = useNavigate();
+>>>>>>> main
 
     const [user, setUser] = useState({
       email: "",
@@ -28,6 +36,7 @@ export default function Register() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+<<<<<<< HEAD
             email,    password
           }),
         });
@@ -38,6 +47,16 @@ export default function Register() {
         } else {
           alert("Registration Successfully!!");
           navigate("/");
+=======
+            email,    password,
+          }),
+        });
+        if (res.status === 400 || !res) {
+          alert("Already used details");
+        } else {
+          alert("Registration Successfully!!");
+          navigate("/login");
+>>>>>>> main
         }
       } catch (error) {
         console.log(error);
@@ -84,7 +103,10 @@ export default function Register() {
                   Register
                 </button>
               </form>
+<<<<<<< HEAD
               <p>You already have an account? <Link to="/">Login</Link> </p> 
+=======
+>>>>>>> main
             </div>
           </div>
         </div>

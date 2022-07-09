@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { userCtx } from './../store/UserContext';
@@ -6,6 +7,15 @@ export default function Login() {
   const navigate = useNavigate();
   //let uCtx=useContext(userCtx)
    const [user, setUser] = useState({
+=======
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Login() {
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+>>>>>>> main
     email: "",
     password: "",
   });
@@ -17,6 +27,7 @@ export default function Login() {
 
     setUser({ ...user, [name]: value });
   };
+<<<<<<< HEAD
  
   // Handle Login
   const handleSubmit = async (event) => {
@@ -24,11 +35,20 @@ export default function Login() {
     const {email, password}=user
    
      try {
+=======
+
+  // Handle Login
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { email, password } = user;
+    try {
+>>>>>>> main
       const res = await fetch("/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+<<<<<<< HEAD
         body: JSON.stringify({  email, password }),
       });
 
@@ -45,6 +65,20 @@ export default function Login() {
       console.log(error);
     } 
   
+=======
+        body: JSON.stringify({     email, password   }),
+      });
+
+      if (res.status === 400 || !res) {
+        alert("Invalid Credentials");
+      } else {
+        alert("Login Successfull");
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+>>>>>>> main
   };
   return (
     <div>
@@ -59,11 +93,19 @@ export default function Login() {
           <input
             type="email"
             className="form-control"
+<<<<<<< HEAD
             id="email"
             aria-describedby="emailHelp"
             name="email"
             value={user.email}
              onChange={handleChange}
+=======
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
+>>>>>>> main
           />
         
         </div>
@@ -72,11 +114,18 @@ export default function Login() {
           <input
             type="password"
             className="form-control"
+<<<<<<< HEAD
             id="password"
             name="password"
             value={user.password}
             onChange={handleChange}
 
+=======
+            id="exampleInputPassword1"
+            name="password"
+            value={user.password}
+            onChange={handleChange}
+>>>>>>> main
           />
         </div>
         <button
@@ -86,7 +135,10 @@ export default function Login() {
                   Login
                 </button>
               </form>
+<<<<<<< HEAD
               <p>You don't have an account? <Link to="/register">Register</Link> </p> 
+=======
+>>>>>>> main
             </div>
           </div>
         </div>
