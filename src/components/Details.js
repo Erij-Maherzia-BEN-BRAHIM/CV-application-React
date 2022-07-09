@@ -76,6 +76,6 @@ export default function Details(props) {
     
   )
   else {
-    return <div>Please select one candidat</div>
+    return <div>Please select the candidat that you want to see its details</div>
   }
 }

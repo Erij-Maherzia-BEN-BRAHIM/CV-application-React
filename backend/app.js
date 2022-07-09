@@ -4,7 +4,7 @@ const authRoutes = require('./routes/auth');
 const dotenv = require("dotenv");
 const morgan = require('morgan')
 require("./database/connect");
-
+const authenticate=require("./middelware/is-auth")
 const app = express();
 
 dotenv.config({ path: "./config.env" });
@@ -25,7 +25,9 @@ app.use(morgan("dev"))
 
 app.use('/auth', authRoutes);
 app.use('/cv', cvRoutes);
-
+app.use('/isAuth', authenticate, (req, res)=>{
+    
+})
 app.use((error, req, res, next) => {
     console.log("-----", error);
     const status = error.statusCode || 500;

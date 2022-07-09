@@ -36,7 +36,7 @@ export default function Login() {
 
       } else {
         alert("Login Successfull");
-        navigate("/");
+        navigate("/cv");
       }
     } catch (error) {
       console.log(error);

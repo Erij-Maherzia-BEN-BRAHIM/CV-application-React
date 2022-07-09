@@ -22,7 +22,7 @@ export default function AddCandidatForm() {
     avatar: refAvatar.current.value,
   }
   candCtx.addNewCandidat(NewCandidat)
-  navigate("/")
+  navigate("/cv")
  }
   return (
     <div>
