@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/rotating-card.css';
 import cover from '../assets/rotating_card_thumb2.png';
+import { RecrutementContext } from './../store/RecrutementContext';
 export default function Details(props) {
+    let rCtx=useContext(RecrutementContext)
+    function recrutmentHandler(){
+        if(!rCtx.isEmbauche(props.selectedCandidat._id)){
+            rCtx.addToEmbauches(props.selectedCandidat)
+        }else{
+            rCtx.removeFromEmbauches(props.selectedCandidat._id)
+        }
+    }
  if(props.isSelected)
   return (
 
@@ -65,7 +74,7 @@ export default function Details(props) {
             </div>
             <div className="footer">
                 <div className="social-links text-center">
-                    <button  className="btn btn-success m-2">Recruter</button>
+                    <button  className="btn btn-success m-2" onClick={recrutmentHandler}>{rCtx.isEmbauche(props.selectedCandidat._id)?'Retirer de la liste des recrutés ':'Recruter'} </button>
                     <Link className="btn btn-info m-2" to={"/cv/"+props.selectedCandidat._id}>+ Details</Link>  
                 </div>
             </div>

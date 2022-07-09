@@ -9,15 +9,15 @@ const router = express.Router();
 router.get('/persons', cvCtrl.getAllPersons);
 
 //récupérer les infos sur une SEULE personne
-router.get('/persons/:id',isAuth, cvCtrl.getPerson);
+router.get('/persons/:id', cvCtrl.getPerson);
 
 //création d'une nouvelle personne
-router.post('/persons',isAuth, cvCtrl.createPerson);
+router.post('/persons' ,cvCtrl.createPerson);
 
 //Update d'une personne
-router.put('/persons/:id',isAuth, cvCtrl.updatePerson);
+router.put('/persons/:id', cvCtrl.updatePerson);
 
 //suppression d'une personne
-router.delete('/persons/:id',isAuth, cvCtrl.deletePerson);
+router.delete('/persons/:id', cvCtrl.deletePerson);
 
 module.exports = router;

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate, Link } from 'react-router-dom';
+import { userCtx } from './../store/UserContext';
 
 export default function Register() {
     const navigate = useNavigate();
+    //let uCtx=useContext(userCtx)
 
     const [user, setUser] = useState({
       email: "",
@@ -35,7 +37,7 @@ export default function Register() {
 
         } else {
           alert("Registration Successfully!!");
-          navigate("/login");
+          navigate("/");
         }
       } catch (error) {
         console.log(error);

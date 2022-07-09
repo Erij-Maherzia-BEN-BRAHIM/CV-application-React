@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { userCtx } from './../store/UserContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  //let uCtx=useContext(userCtx)
    const [user, setUser] = useState({
     email: "",
     password: "",
@@ -37,11 +39,12 @@ export default function Login() {
       } else {
         alert("Login Successfull");
         navigate("/cv");
+
       }
     } catch (error) {
       console.log(error);
     } 
- 
+  
   };
   return (
     <div>
