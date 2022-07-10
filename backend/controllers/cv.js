@@ -40,22 +40,27 @@ exports.getPerson = (req, res) => {
 
 }
 exports.createPerson = (req, res, next) => {
-    // const prenom = req.body.prenom;
-    // const nom = req.body.nom;
-    // const age = req.body.age;
-    // const profession = req.body.profession;
-    // const avatar = req.body.avatar;
+     const prenom = req.body.prenom;
+     const nom = req.body.nom;
+     const age = req.body.age;
+     const profession = req.body.profession;
+     const avatar = req.body.avatar;
+     const cv = req.file.path;
+     const newPerson = new Personne({
+         prenom: prenom,
+         nom: nom,
+         age: age,
+         profession: profession,
+         avatar: avatar,
+         cv: cv,
+        });
+        if(req.file){
+            newPerson.cv= req.file.path
+        } 
 
-    // const newPerson = new Personne({
-    //     prenom: prenom,
-    //     nom: nom,
-    //     age: age,
-    //     profession: profession,
-    //     avatar: avatar
-    // });
-
-    let newP = _.pick(req.body, ['prenom', 'nom', 'age', 'profession', 'avatar']);
-    const newPerson = new Personne(newP);
+    //let newP = _.pick(req.body, ['prenom', 'nom', 'age', 'profession', 'avatar', 'cv']);
+    
+    //const newPerson = new Personne(newP);
 
     newPerson.save()
         .then(result => {

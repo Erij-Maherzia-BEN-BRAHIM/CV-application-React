@@ -4,6 +4,8 @@ import { userCtx } from './../store/UserContext';
 
 export default function Login() {
   const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   //let uCtx=useContext(userCtx)
    const [user, setUser] = useState({
     email: "",
@@ -46,6 +48,7 @@ export default function Login() {
     } 
   
   };
+
   return (
     <div>
     <div className="container shadow my-5">

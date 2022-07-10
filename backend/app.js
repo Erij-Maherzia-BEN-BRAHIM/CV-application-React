@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const morgan = require('morgan')
 require("./database/connect");
 const authenticate=require("./middelware/is-auth")
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 const app = express();
 
 dotenv.config({ path: "./config.env" });
@@ -35,8 +37,10 @@ app.use((error, req, res, next) => {
     const data = error.data;
     res.status(status).json({ message: message, data: data }); //data c'est pour la validation
 });
-
-
+app.use('/uplaods', express.static('uploads'))
+app.get("/", (req,res)=>{
+    res.download("filename.pdf")
+})
 app.listen(port, () => {
         console.log("server is listening ");
       });

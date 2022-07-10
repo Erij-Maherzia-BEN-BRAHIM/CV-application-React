@@ -57,7 +57,7 @@ function AddNewCandidatContextProvider(props) {
     return tabCand.find((c) => c._id === id);
   }
   function getAllCandidats() {
-    setLoading(true);
+    //setLoading(true);
 
     fetch("/cv/persons", {
       method: "GET",

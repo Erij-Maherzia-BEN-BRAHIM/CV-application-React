@@ -14,12 +14,13 @@ import Recrutes from './components/Recrutes';
 function App() {
   let {id} = useParams();
 
+
   return (
     <>
       <Navbar  ></Navbar>
       <Routes>
         <Route path="/cv"element={<Cv></Cv>} ></Route>
-        <Route path="/" element={<Login></Login>} />
+        <Route path="/"  element={<Login></Login>} />
         <Route path="/recrues" element={<Recrutes></Recrutes>} />
       
           <Route exact path="/cv/:_id" element={<Infos></Infos>} />

@@ -1,6 +1,7 @@
 const express = require("express");
 const cvCtrl = require("../controllers/cv");
 const isAuth = require("../middelware/is-auth");
+const upload= require('../middelware/upload')
 const router = express.Router();
 
 //const isAuth = require("../middelware/is-auth");
@@ -12,12 +13,11 @@ router.get('/persons', cvCtrl.getAllPersons);
 router.get('/persons/:id', cvCtrl.getPerson);
 
 //création d'une nouvelle personne
-router.post('/persons' ,cvCtrl.createPerson);
+router.post('/persons',upload.single('cv'),cvCtrl.createPerson);
 
 //Update d'une personne
 router.put('/persons/:id', cvCtrl.updatePerson);
 
 //suppression d'une personne
 router.delete('/persons/:id', cvCtrl.deletePerson);
-
 module.exports = router;

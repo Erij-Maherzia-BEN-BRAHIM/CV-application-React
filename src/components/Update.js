@@ -21,7 +21,7 @@ function handleInputChange ( event) {
 console.log('hi');
         candCtx.updateCandidat(_id,candidat);
        
-     navigate('/') }
+     navigate('/cv') }
       }>
         <div className="container">
           <label htmlFor="prenom">Prénom</label>
@@ -34,6 +34,7 @@ console.log('hi');
           <input className="form-control" type="text" name="profession"value={candidat.profession} onChange={handleInputChange}></input>
           <label htmlFor="avatar">Avatar</label>
           <input className="form-control" type="url" name="avatar"value={candidat.avatar}onChange={handleInputChange} ></input>
+        
       <button className="btn btn-success my-2" type="submit">Modifier le Candidat</button>
         </div>
       </form>

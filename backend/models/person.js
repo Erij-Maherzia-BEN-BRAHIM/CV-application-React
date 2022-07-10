@@ -23,6 +23,10 @@ const personSchema = new Schema({
         type: String,
         require: false
     },
+    cv: {
+        type: String,
+        require: true
+    },
 });
 
 module.exports = mongoose.model('Personne', personSchema);

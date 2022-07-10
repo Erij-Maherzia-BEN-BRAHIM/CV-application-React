@@ -1,15 +1,28 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { candidatCtx } from './../store/CandidatContext';
-
+import fileDownload from 'js-file-download'
+import axios from 'axios'
 export default function Infos() {
 let ctx=useContext(candidatCtx)
 let {_id}=useParams()
 let selectedCand= ctx.getCandidatById(_id)
+let cvCandidat=selectedCand.cv
 let navigate=useNavigate()
 function removeC(){
     ctx.removeOneCandidat(_id)
-    navigate('/')
+    navigate('/cv')
+}
+const download=(e)=>{
+e.preventDefault()
+axios({
+    url:"/",
+    method:"GET",
+    responseType:"blob"
+}).then((res)=>{
+    console.log(res);
+    fileDownload(res.data,cvCandidat+".pdf")
+})
 }
 console.log("received ", selectedCand)
 return (
@@ -46,6 +59,11 @@ return (
                                 <tr>
                                     <td>
                                         <strong>Profession</strong> {selectedCand.profession}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong><button className='btn btn-dark' onClick={(e)=>download(e)}>Téléchager le CV  </button></strong>
                                     </td>
                                 </tr>
                             
