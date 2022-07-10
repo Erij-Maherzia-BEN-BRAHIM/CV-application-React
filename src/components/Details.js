@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import '../assets/rotating-card.css';
 import cover from '../assets/rotating_card_thumb2.png';
 import { RecrutementContext } from './../store/RecrutementContext';
+import { candidatCtx } from './../store/CandidatContext';
 export default function Details(props) {
+    let cCtx=useContext(candidatCtx)
     let rCtx=useContext(RecrutementContext)
     function recrutmentHandler(){
         if(!rCtx.isEmbauche(props.selectedCandidat._id)){
@@ -12,6 +14,7 @@ export default function Details(props) {
             rCtx.removeFromEmbauches(props.selectedCandidat._id)
         }
     }
+if(!cCtx.tabCandidats===0){
  if(props.isSelected)
   return (
 
@@ -86,5 +89,7 @@ export default function Details(props) {
   )
   else {
     return <div>Please select the candidat that you want to see its details</div>
+  } }else{
+    return <div>Your list is empty</div>
   }
 }

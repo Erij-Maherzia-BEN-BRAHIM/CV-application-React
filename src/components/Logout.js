@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 export default function Logout() {
     const history = useNavigate();
@@ -29,7 +28,7 @@ export default function Logout() {
 
     useEffect(() => {
         logout();
-    }, []);
+    });
   return (
     <div>
 

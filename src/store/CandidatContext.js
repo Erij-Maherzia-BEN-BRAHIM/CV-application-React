@@ -11,7 +11,7 @@ export const candidatCtx = createContext({
 
 function AddNewCandidatContextProvider(props) {
 
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
 
   const [tabCand, setTabCand] = useState([]);
   function addNewCandidat(newCandidat) {
@@ -64,7 +64,7 @@ function AddNewCandidatContextProvider(props) {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => {
-        setLoading(false);
+        //setLoading(false);
 
         return res.json();
       })

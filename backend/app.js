@@ -5,8 +5,8 @@ const dotenv = require("dotenv");
 const morgan = require('morgan')
 require("./database/connect");
 const authenticate=require("./middelware/is-auth")
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
+//const multer  = require('multer')
+//const upload = multer({ dest: 'uploads/' })
 const app = express();
 
 dotenv.config({ path: "./config.env" });

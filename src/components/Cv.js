@@ -19,14 +19,12 @@ function showDetails(c){
 }
 , [])
 console.log('tc = ',candCTX.tabCandidats);
-if (candCTX.tabCandidats.length===0){
 
-  return <div className="container"><h1> Your list of candidats is empty</h1></div>
-}else{
+  
   console.log("usefecct declenche ", candCTX.tabCandidats);
 
   return (
-    <div className="container">
+    <div className="container shadow p-3">
      <div className="row">
       <div className="col-md-5">
       <Liste showDetails={showDetails} Liste={candCTX.tabCandidats}></Liste>
@@ -39,5 +37,4 @@ if (candCTX.tabCandidats.length===0){
       </div>
     </div>
   );
-}
 }
